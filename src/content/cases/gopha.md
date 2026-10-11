@@ -37,6 +37,12 @@ images:
     alt: "Go!PHA beeld"
   - src: "https://www.basvanderpaardt.com/wp-content/uploads/2022/07/bas-gopha-16-1536x1536.jpg"
     alt: "Go!PHA brochure pagina"
+links:
+  - label:
+      nl: "Video: World favouring PHA"
+      en: "Video: World favouring PHA"
+    url: "https://www.basvanderpaardt.com/wp-content/uploads/2022/07/Gopha-World-favouring-PHA.mp4"
+    icon: "play_circle"
 featured: true
 order: 2
 ---
