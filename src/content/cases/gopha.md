@@ -9,11 +9,34 @@ summary:
 image: "https://www.basvanderpaardt.com/wp-content/uploads/2022/07/bas-gopha-13-scaled.jpg"
 imageAlt: "Go!PHA brochure"
 images:
-  - src: "https://www.basvanderpaardt.com/wp-content/uploads/2022/07/bas-gopha-13-scaled.jpg"
+  - src: "https://www.basvanderpaardt.com/wp-content/uploads/2022/07/bas-gopha-14-768x768.jpg"
+    alt: "Go!PHA stakeholdergesprekken"
+    note:
+      nl: "Visie/missie-interviews met internationale stakeholders"
+      en: "Vision/mission interviews with international stakeholders"
+  - src: "https://www.basvanderpaardt.com/wp-content/uploads/2022/07/bas-gopha-18-1024x1024.jpg"
+    alt: "Go!PHA content repository"
+    note:
+      nl: "Opzet van een content repository in Notion."
+      en: "Setting up a content repository in Notion."
+  - src: "https://www.basvanderpaardt.com/wp-content/uploads/2022/07/bas-gopha--1024x1024.jpg"
+    alt: "Go!PHA infographics"
+    note:
+      nl: "Infographics om positie en ontwikkelingen te duiden"
+      en: "Infographics to explain market position and developments"
+  - src: "https://www.basvanderpaardt.com/wp-content/uploads/2022/07/bas-gopha-13-1024x1024.jpg"
     alt: "Go!PHA brochure"
     note:
-      nl: "Brochure voor Go!PHA, de Global Organisation for PHA."
-      en: "Brochure for Go!PHA, the Global Organisation for PHA."
+      nl: "Ontwerp en productie corporate brochure"
+      en: "Design and production of the corporate brochure"
+  - src: "https://www.basvanderpaardt.com/wp-content/uploads/2022/07/bas-gopha-15-1024x1024.jpg"
+    alt: "Go!PHA brochure pagina"
+  - src: "https://www.basvanderpaardt.com/wp-content/uploads/2022/07/bas-gopha-12-1536x1536.jpg"
+    alt: "Go!PHA brochure pagina"
+  - src: "https://www.basvanderpaardt.com/wp-content/uploads/2022/07/Schermafbeelding-2024-04-24-om-11.12.41.png"
+    alt: "Go!PHA beeld"
+  - src: "https://www.basvanderpaardt.com/wp-content/uploads/2022/07/bas-gopha-16-1536x1536.jpg"
+    alt: "Go!PHA brochure pagina"
 featured: true
 order: 2
 ---

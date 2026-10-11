@@ -9,11 +9,19 @@ summary:
 image: "https://www.basvanderpaardt.com/wp-content/uploads/2024/03/bas-beone2.jpg"
 imageAlt: "BeOne posterontwerp"
 images:
-  - src: "https://www.basvanderpaardt.com/wp-content/uploads/2024/03/bas-beone2.jpg"
+  - src: "https://www.basvanderpaardt.com/wp-content/uploads/2024/03/bas-beone-1024x1024.jpg"
+    alt: "BeOne campagnebeeld"
+  - src: "https://www.basvanderpaardt.com/wp-content/uploads/2024/03/bas-beone3-1024x1024.jpg"
+    alt: "BeOne campagnebeeld"
+  - src: "https://www.basvanderpaardt.com/wp-content/uploads/2007/03/bas-beone4-1024x1024.jpg"
+    alt: "BeOne campagnebeeld"
+  - src: "https://www.basvanderpaardt.com/wp-content/uploads/2024/03/bas-beone2-1024x1024.jpg"
     alt: "BeOne posterontwerp"
     note:
       nl: "Posterontwerp voor een modeketen met 15 winkels."
       en: "Poster design for a fashion chain with 15 stores."
+  - src: "https://www.basvanderpaardt.com/wp-content/uploads/2024/03/bas-losse-assets-2-1024x1024.jpg"
+    alt: "BeOne losse assets"
 featured: true
 order: 3
 ---

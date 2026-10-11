@@ -162,3 +162,4 @@ address { font-style: normal; color: var(--muted); }
   .card-media img { transition: none; }
   .slides { scroll-behavior: auto; }
 }
+.carousel-controls[hidden] { display: none; }

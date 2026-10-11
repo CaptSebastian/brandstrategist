@@ -9,11 +9,36 @@ summary:
 image: "https://www.basvanderpaardt.com/wp-content/uploads/2024/03/Bas-Opvang-6-1-scaled.jpg"
 imageAlt: "Poster Noodopvang Utrecht"
 images:
-  - src: "https://www.basvanderpaardt.com/wp-content/uploads/2024/03/Bas-Opvang-6-1-scaled.jpg"
+  - src: "https://www.basvanderpaardt.com/wp-content/uploads/2024/03/Bas-Opvang-7-1024x1024.jpg"
+    alt: "Noodopvang Utrecht"
+  - src: "https://www.basvanderpaardt.com/wp-content/uploads/2024/03/Bas-Opvang2-1024x1024.jpg"
+    alt: "Noodopvang Utrecht"
+  - src: "https://www.basvanderpaardt.com/wp-content/uploads/2024/03/Bas-Opvang-1024x1024.jpg"
+    alt: "Noodopvang Utrecht"
+  - src: "https://www.basvanderpaardt.com/wp-content/uploads/2024/03/Bas-Opvang4-1024x1024.jpg"
+    alt: "Noodopvang Utrecht"
+    note:
+      nl: "Fotografie: Mona van den Berg"
+      en: "Photography: Mona van den Berg"
+  - src: "https://www.basvanderpaardt.com/wp-content/uploads/2024/03/Bas-Opvang-10-1024x1024.jpg"
+    alt: "Noodopvang Utrecht"
+    note:
+      nl: "De organisatie kan zelf nieuwe uitingen maken door foto’s te wisselen in Canva."
+      en: "The organisation can make new materials itself by swapping photos in Canva."
+  - src: "https://www.basvanderpaardt.com/wp-content/uploads/2024/03/Bas-Opvang-6-1-1024x1024.jpg"
     alt: "Poster Noodopvang Utrecht"
     note:
-      nl: "Poster voor de Stichting Noodopvang Dakloze Vreemdelingen Utrecht."
-      en: "Poster for the Stichting Noodopvang Dakloze Vreemdelingen Utrecht."
+      nl: "De ontwerpen kunnen in verschillende formaten worden gebruikt."
+      en: "The designs can be used in different formats."
+  - src: "https://www.basvanderpaardt.com/wp-content/uploads/2024/03/Bas-Opvang-8-1024x1024.jpg"
+    alt: "Noodopvang Utrecht"
+    note:
+      nl: "Als poster of als flyer"
+      en: "As a poster or a flyer"
+  - src: "https://www.basvanderpaardt.com/wp-content/uploads/2024/03/Bas-Opvang-9-1024x1024.jpg"
+    alt: "Noodopvang Utrecht"
+  - src: "https://www.basvanderpaardt.com/wp-content/uploads/2024/03/Bas-Opvang3-1024x1024.jpg"
+    alt: "Noodopvang Utrecht"
 featured: true
 order: 6
 ---

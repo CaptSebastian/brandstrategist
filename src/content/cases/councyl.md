@@ -9,11 +9,17 @@ summary:
 image: "https://www.basvanderpaardt.com/wp-content/uploads/2021/05/uk-councyl-high-1.gif"
 imageAlt: "Councyl.ai animatie"
 images:
+  - src: "https://www.basvanderpaardt.com/wp-content/uploads/2022/05/Councyl-animatie-13-high.gif"
+    alt: "Councyl.ai animatie"
   - src: "https://www.basvanderpaardt.com/wp-content/uploads/2021/05/uk-councyl-high-1.gif"
     alt: "Councyl.ai animatie"
     note:
       nl: "Presentaties, website en uitlegvideo’s voor Councyl.ai."
       en: "Presentations, website and explainer videos for Councyl.ai."
+  - src: "https://www.basvanderpaardt.com/wp-content/uploads/2022/05/councyl-hp-mu-1024x576.jpg"
+    alt: "Councyl.ai homepage mock-up"
+  - src: "https://www.basvanderpaardt.com/wp-content/uploads/2022/03/endslide-blue-1024x1024.png"
+    alt: "Councyl.ai slide"
 featured: true
 order: 1
 ---
