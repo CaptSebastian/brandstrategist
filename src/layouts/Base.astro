@@ -1,0 +1,93 @@
+---
+import '../styles/global.css';
+import '@fontsource/caveat/400.css';
+import { ui, routes, email, type Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+  title: string;
+  description?: string;
+  /** Path van deze pagina, bv. "/werk/viadjo/" */
+  path: string;
+  /** Path van dezelfde pagina in de andere taal */
+  alt: string;
+  image?: string;
+  noindex?: boolean;
+}
+
+const { lang, title, description, path, alt, image, noindex = false } = Astro.props;
+const t = ui[lang];
+const r = routes[lang];
+const other: Lang = lang === 'nl' ? 'en' : 'nl';
+const site = Astro.site ?? new URL('https://www.basvanderpaardt.com');
+const canonical = new URL(path, site).href;
+const altUrl = new URL(alt, site).href;
+const fullTitle = path === r.home ? title : `${title} — ${t.siteName}`;
+const ogImage = image ? new URL(image, site).href : undefined;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Bas van der Paardt',
+  jobTitle: lang === 'nl' ? 'Merkstrateeg en ontwerper' : 'Brand strategist and designer',
+  url: new URL('/', site).href,
+  email,
+  address: { '@type': 'PostalAddress', addressLocality: 'Amsterdam', addressCountry: 'NL' },
+};
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    {description && <meta name="description" content={description} />}
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang={lang} href={canonical} />
+    <link rel="alternate" hreflang={other} href={altUrl} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    {noindex && <meta name="robots" content="noindex" />}
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={t.siteName} />
+    <meta property="og:title" content={fullTitle} />
+    {description && <meta property="og:description" content={description} />}
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content={lang === 'nl' ? 'nl_NL' : 'en_GB'} />
+    {ogImage && <meta property="og:image" content={ogImage} />}
+    <meta name="twitter:card" content={ogImage ? 'summary_large_image' : 'summary'} />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="brand" href={r.home}>{t.siteName}</a>
+        <nav class="nav" aria-label="Main">
+          <a href={r.work} aria-current={path.startsWith(r.work) ? 'page' : undefined}>{t.nav.work}</a>
+          <a href={r.about} aria-current={path === r.about ? 'page' : undefined}>{t.nav.about}</a>
+          <a href={r.contact}>{t.nav.contact}</a>
+          <a class="lang" href={alt} hreflang={other} lang={other}>{t.nav.switchTo}</a>
+          <a class="btn small" href={r.contact}>{t.nav.cta}</a>
+        </nav>
+      </div>
+    </header>
+    <main id="main">
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div class="wrap">
+        <div>
+          <strong>{t.siteName}</strong><br />
+          {t.footer.tagline}
+        </div>
+        <address>
+          Meet Berlage<br />
+          Oudebrugsteeg 9<br />
+          1012 JE Amsterdam
+        </address>
+        <div><a href={`mailto:${email}`}>{email}</a></div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+---
+import Base from '../layouts/Base.astro';
+import { ui, routes, type Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = ui[lang];
+const other: Lang = lang === 'nl' ? 'en' : 'nl';
+---
+
+<Base lang={lang} title={t.meta.thanksTitle} path={routes[lang].thanks} alt={routes[other].thanks} noindex>
+  <section class="hero">
+    <div class="wrap">
+      <h1>{t.thanks.title}</h1>
+      <p class="lead">{t.thanks.body}</p>
+      <p class="actions"><a class="btn" href={routes[lang].home}>{t.thanks.back}</a></p>
+    </div>
+  </section>
+</Base>

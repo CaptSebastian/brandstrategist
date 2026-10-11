@@ -1,0 +1,96 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import CaseCard from './CaseCard.astro';
+import ShuffleGrid from './ShuffleGrid.astro';
+import Contact from './Contact.astro';
+import { ui, routes, type Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = ui[lang];
+const r = routes[lang];
+const other: Lang = lang === 'nl' ? 'en' : 'nl';
+
+const featured = (await getCollection('cases', ({ data }) => !data.draft)).sort(
+  (a, b) => a.data.order - b.data.order,
+);
+---
+
+<Base lang={lang} title={t.meta.homeTitle} description={t.meta.homeDesc} path={r.home} alt={routes[other].home}>
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">{t.hero.eyebrow}</p>
+      <h1>{t.hero.title}</h1>
+      <p class="lead">{t.hero.lead}</p>
+      <div class="actions">
+        <a class="btn" href={r.contact}>{t.hero.primary}</a>
+        <a class="btn ghost" href="#work">{t.hero.secondary}</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="work">
+    <div class="wrap">
+      <h2>{t.work.title}</h2>
+      <ShuffleGrid count={6}>
+        {featured.map((entry, i) => <CaseCard entry={entry} lang={lang} />)}
+      </ShuffleGrid>
+      <p class="more"><a class="btn ghost small" href={r.work}>{t.work.all}</a></p>
+    </div>
+  </section>
+
+  <section class="section" id="method">
+    <div class="wrap">
+      <h2>{t.method.title}</h2>
+      <p class="lead">{t.method.intro}</p>
+      <ol class="method-list method">
+        {
+          t.method.steps.map((step, i) => (
+            <li>
+              <span class="num">0{i + 1}</span>
+              <span class="word">{step.word}</span>
+              <p class="q">{step.q}</p>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </section>
+
+  <section class="section" id="values">
+    <div class="wrap two-col">
+      <div>
+        <h2>{t.values.title}</h2>
+        <p>{t.values.body}</p>
+      </div>
+      <div>
+        <h2>{t.meaning.title}</h2>
+        <p>{t.meaning.body}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="quotes">
+    <div class="wrap">
+      <h2>{t.quotes.title}</h2>
+      <div class="quotes">
+        {
+          t.quotes.items.map((q) => (
+            <blockquote>
+              <p>{q.text}</p>
+              <footer>
+                {q.name}, {q.org}
+              </footer>
+            </blockquote>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <Contact lang={lang} />
+</Base>

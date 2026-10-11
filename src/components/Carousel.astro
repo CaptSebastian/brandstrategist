@@ -1,0 +1,72 @@
+---
+// Carousel met vierkante beelden en een 'geeltje' per beeld.
+// Alle tekst staat als gewone HTML in de pagina (vertaalbaar en indexeerbaar).
+// Zonder JavaScript is dit een horizontaal scrollbare rij (scroll-snap).
+import type { Lang } from '../i18n/ui';
+
+interface Props {
+  images: { src: string; alt: string; note?: { nl: string; en: string } }[];
+  lang: Lang;
+  label: string;
+}
+const { images, lang, label } = Astro.props;
+const l = lang === 'nl'
+  ? { prev: 'Vorig beeld', next: 'Volgend beeld', of: 'van' }
+  : { prev: 'Previous image', next: 'Next image', of: 'of' };
+const many = images.length > 1;
+---
+
+<div class="carousel" data-carousel role="region" aria-roledescription="carousel" aria-label={label}>
+  <ul class="slides" data-slides>
+    {
+      images.map((img, i) => (
+        <li class="slide" aria-roledescription="slide" aria-label={`${i + 1} ${l.of} ${images.length}`}>
+          <figure>
+            <div class="slide-media">
+              <img src={img.src} alt={img.alt} loading={i === 0 ? 'eager' : 'lazy'} decoding="async" />
+            </div>
+            {img.note && <figcaption class="note">{img.note[lang]}</figcaption>}
+          </figure>
+        </li>
+      ))
+    }
+  </ul>
+  {
+    many && (
+      <div class="carousel-controls" data-controls hidden>
+        <button type="button" class="arrow" data-prev aria-label={l.prev}>←</button>
+        <span class="count" aria-live="polite"><span data-current>1</span> / {images.length}</span>
+        <button type="button" class="arrow" data-next aria-label={l.next}>→</button>
+      </div>
+    )
+  }
+</div>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-carousel]').forEach((root) => {
+    const slides = root.querySelector<HTMLElement>('[data-slides]');
+    const controls = root.querySelector<HTMLElement>('[data-controls]');
+    if (!slides || !controls) return;
+    controls.hidden = false;
+    const items = Array.from(slides.children) as HTMLElement[];
+    const current = root.querySelector('[data-current]');
+    let index = 0;
+    const go = (i: number) => {
+      index = (i + items.length) % items.length;
+      slides.scrollTo({ left: items[index].offsetLeft - slides.offsetLeft, behavior: 'smooth' });
+    };
+    root.querySelector('[data-prev]')?.addEventListener('click', () => go(index - 1));
+    root.querySelector('[data-next]')?.addEventListener('click', () => go(index + 1));
+    root.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') go(index - 1);
+      if (e.key === 'ArrowRight') go(index + 1);
+    });
+    slides.addEventListener('scroll', () => {
+      const i = Math.round(slides.scrollLeft / slides.clientWidth);
+      if (i !== index && i >= 0 && i < items.length) {
+        index = i;
+        if (current) current.textContent = String(i + 1);
+      }
+    }, { passive: true });
+  });
+</script>

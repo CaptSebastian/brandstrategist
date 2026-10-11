@@ -1,0 +1,12 @@
+# Oude WordPress-URL's naar de nieuwe structuur (301)
+/about                     /over/                                301
+/viadjo                    /werk/viadjo/                         301
+/blad                      /werk/blad/                           301
+/beone                     /werk/beone/                          301
+/sndvu                     /werk/sndvu/                          301
+/promiss-excellent         /werk/promiss-excellent/              301
+/copernicus-beer           /werk/copernicus-beer/                301
+/nft-playground-amsterdam  /werk/nft-playground-amsterdam/       301
+/gopha                     /werk/gopha/                          301
+/councyl                   /werk/councyl/                        301
+/shiatsucongress-2020      /werk/shiatsucongress-2020/           301

@@ -1,0 +1,31 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import CaseCard from './CaseCard.astro';
+import ShuffleGrid from './ShuffleGrid.astro';
+import { ui, routes, type Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = ui[lang];
+const other: Lang = lang === 'nl' ? 'en' : 'nl';
+
+const all = (await getCollection('cases', ({ data }) => !data.draft)).sort((a, b) => a.data.order - b.data.order);
+---
+
+<Base lang={lang} title={t.meta.workTitle} description={t.meta.workDesc} path={routes[lang].work} alt={routes[other].work}>
+  <section class="hero">
+    <div class="wrap">
+      <h1>{t.nav.work}</h1>
+      <p class="lead">{t.meta.workDesc}</p>
+    </div>
+  </section>
+  <section class="wrap" style="padding-bottom: 5rem;">
+    <ShuffleGrid count={9} button={t.work.shuffle}>
+      {all.map((entry) => <CaseCard entry={entry} lang={lang} />)}
+    </ShuffleGrid>
+  </section>
+</Base>

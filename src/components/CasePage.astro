@@ -1,0 +1,62 @@
+---
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import CaseCard from './CaseCard.astro';
+import Carousel from './Carousel.astro';
+import ShuffleGrid from './ShuffleGrid.astro';
+import { ui, routes, type Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+  entry: CollectionEntry<'cases'>;
+}
+
+const { lang, entry } = Astro.props;
+const t = ui[lang];
+const other: Lang = lang === 'nl' ? 'en' : 'nl';
+const { title, tagline, summary, image, imageAlt, images } = entry.data;
+const slides = images.length ? images : image ? [{ src: image, alt: imageAlt ?? '' }] : [];
+const cover = slides[0]?.src;
+const { Content } = await render(entry);
+const hasBody = Boolean(entry.body && entry.body.trim());
+
+const others = (await getCollection('cases', ({ id, data }) => id !== entry.id && !data.draft))
+  .sort((a, b) => a.data.order - b.data.order);
+---
+
+<Base
+  lang={lang}
+  title={title}
+  description={summary?.[lang] ?? tagline?.[lang]}
+  path={routes[lang].case(entry.id)}
+  alt={routes[other].case(entry.id)}
+  image={cover}
+>
+  <article class="wrap case-hero">
+    <a class="back" href={routes[lang].work}>← {t.work.back}</a>
+    <h1>{title}</h1>
+    {tagline && <p class="lead">{tagline[lang]}</p>}
+    <div class="case-layout">
+      {slides.length > 0 && <Carousel images={slides} lang={lang} label={title} />}
+      <div class="prose">
+        {summary && <p>{summary[lang]}</p>}
+        {hasBody && <Content />}
+      </div>
+    </div>
+  </article>
+
+  {
+    others.length > 0 && (
+      <section class="section">
+        <div class="wrap">
+          <h2>{t.work.more}</h2>
+          <ShuffleGrid count={3}>
+            {others.map((e) => (
+              <CaseCard entry={e} lang={lang} />
+            ))}
+          </ShuffleGrid>
+        </div>
+      </section>
+    )
+  }
+</Base>

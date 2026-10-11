@@ -1,0 +1,16 @@
+---
+import Base from '../layouts/Base.astro';
+import { ui, routes } from '../i18n/ui';
+
+const t = ui.nl;
+---
+
+<Base lang="nl" title={t.notFound.title} path="/404/" alt={routes.en.home} noindex>
+  <section class="hero">
+    <div class="wrap">
+      <h1>{t.notFound.title}</h1>
+      <p class="lead">{t.notFound.body}</p>
+      <p class="actions"><a class="btn" href={routes.nl.home}>{t.notFound.back}</a></p>
+    </div>
+  </section>
+</Base>

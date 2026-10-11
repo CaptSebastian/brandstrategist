@@ -1,0 +1,39 @@
+---
+// Toont `count` willekeurige kaarten uit de slot-inhoud. Zonder JavaScript zie je de eerste `count`
+// (op volgorde); met JavaScript wordt de selectie bij elk bezoek geschud.
+interface Props {
+  count: number;
+  button?: string;
+}
+const { count, button } = Astro.props;
+---
+
+<div data-shuffle={count}>
+  <div class="grid" data-grid>
+    <slot />
+  </div>
+  {button && <p class="more"><button type="button" class="btn ghost small" data-reshuffle hidden>{button}</button></p>}
+</div>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-shuffle]').forEach((root) => {
+    const grid = root.querySelector<HTMLElement>('[data-grid]');
+    if (!grid) return;
+    const count = Number(root.dataset.shuffle);
+    const cards = Array.from(grid.children) as HTMLElement[];
+    const run = () => {
+      const order = [...cards];
+      for (let i = order.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [order[i], order[j]] = [order[j], order[i]];
+      }
+      order.forEach((c, i) => {
+        c.hidden = i >= count;
+        grid.appendChild(c);
+      });
+    };
+    const btn = root.querySelector<HTMLButtonElement>('[data-reshuffle]');
+    if (btn) { btn.hidden = cards.length <= count; btn.addEventListener('click', run); }
+    run();
+  });
+</script>

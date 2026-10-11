@@ -1,0 +1,22 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { routes, type Lang } from '../i18n/ui';
+
+interface Props {
+  entry: CollectionEntry<'cases'>;
+  lang: Lang;
+}
+
+const { entry, lang } = Astro.props;
+const { title, tagline, image, imageAlt, images } = entry.data;
+const src = image ?? images[0]?.src;
+const alt = imageAlt ?? images[0]?.alt ?? '';
+---
+
+<a class="card" href={routes[lang].case(entry.id)}>
+  <div class="card-media">
+    {src && <img src={src} alt={alt} loading="lazy" decoding="async" />}
+  </div>
+  <h3>{title}</h3>
+  {tagline && <p>{tagline[lang]}</p>}
+</a>
