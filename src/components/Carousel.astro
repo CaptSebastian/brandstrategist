@@ -11,8 +11,8 @@ interface Props {
 }
 const { images, lang, label } = Astro.props;
 const l = lang === 'nl'
-  ? { prev: 'Vorig beeld', next: 'Volgend beeld', of: 'van' }
-  : { prev: 'Previous image', next: 'Next image', of: 'of' };
+  ? { prev: 'Vorig beeld', next: 'Volgend beeld', of: 'van', show: 'Toon beeld' }
+  : { prev: 'Previous image', next: 'Next image', of: 'of', show: 'Show image' };
 const many = images.length > 1;
 ---
 
@@ -33,6 +33,17 @@ const many = images.length > 1;
   </ul>
   {
     many && (
+      <div class="thumbs" data-thumbs hidden>
+        {images.map((img, i) => (
+          <button type="button" class="thumb" data-thumb={i} aria-label={`${l.show} ${i + 1}`} aria-current={i === 0 ? 'true' : 'false'}>
+            <img src={img.src} alt="" loading="lazy" decoding="async" />
+          </button>
+        ))}
+      </div>
+    )
+  }
+  {
+    many && (
       <div class="carousel-controls" data-controls hidden>
         <button type="button" class="arrow" data-prev aria-label={l.prev}>←</button>
         <span class="count" aria-live="polite"><span data-current>1</span> / {images.length}</span>
@@ -46,15 +57,24 @@ const many = images.length > 1;
   document.querySelectorAll<HTMLElement>('[data-carousel]').forEach((root) => {
     const slides = root.querySelector<HTMLElement>('[data-slides]');
     const controls = root.querySelector<HTMLElement>('[data-controls]');
+    const thumbsBox = root.querySelector<HTMLElement>('[data-thumbs]');
     if (!slides || !controls) return;
     controls.hidden = false;
-    const items = Array.from(slides.children) as HTMLElement[];
+    if (thumbsBox) thumbsBox.hidden = false;
     const current = root.querySelector('[data-current]');
+    const thumbs = Array.from(root.querySelectorAll<HTMLElement>('[data-thumb]'));
+    const mark = (i: number) => {
+      thumbs.forEach((t, k) => t.setAttribute('aria-current', k === i ? 'true' : 'false'));
+      if (current) current.textContent = String(i + 1);
+    };
+    const items = Array.from(slides.children) as HTMLElement[];
     let index = 0;
     const go = (i: number) => {
       index = (i + items.length) % items.length;
       slides.scrollTo({ left: items[index].offsetLeft - slides.offsetLeft, behavior: 'smooth' });
+      mark(index);
     };
+    thumbs.forEach((t, k) => t.addEventListener('click', () => go(k)));
     root.querySelector('[data-prev]')?.addEventListener('click', () => go(index - 1));
     root.querySelector('[data-next]')?.addEventListener('click', () => go(index + 1));
     root.addEventListener('keydown', (e) => {
@@ -65,7 +85,7 @@ const many = images.length > 1;
       const i = Math.round(slides.scrollLeft / slides.clientWidth);
       if (i !== index && i >= 0 && i < items.length) {
         index = i;
-        if (current) current.textContent = String(i + 1);
+        mark(i);
       }
     }, { passive: true });
   });
