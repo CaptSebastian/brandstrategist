@@ -4,7 +4,21 @@ import Base from '../layouts/Base.astro';
 import CaseCard from './CaseCard.astro';
 import Carousel from './Carousel.astro';
 import ShuffleGrid from './ShuffleGrid.astro';
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
 import { ui, routes, type Lang } from '../i18n/ui';
+
+// Google Material Symbols (outlined) als inline SVG. Onbekend of geen icoon: pijltje (arrow_forward).
+const ARROW = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true" focusable="false"><path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z"/></svg>';
+function symbol(name?: string) {
+  if (!name || !/^[a-z0-9_]+$/.test(name)) return ARROW;
+  try {
+    const raw = readFileSync(join(process.cwd(), 'node_modules/@material-symbols/svg-400/outlined', `${name}.svg`), 'utf8');
+    return raw.replace(/<svg[^>]*>/, '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true" focusable="false">');
+  } catch {
+    return ARROW;
+  }
+}
 
 interface Props {
   lang: Lang;
@@ -14,7 +28,7 @@ interface Props {
 const { lang, entry } = Astro.props;
 const t = ui[lang];
 const other: Lang = lang === 'nl' ? 'en' : 'nl';
-const { title, tagline, summary, image, imageAlt, images } = entry.data;
+const { title, tagline, summary, image, imageAlt, images, links } = entry.data;
 const slides = images.length ? images : image ? [{ src: image, alt: imageAlt ?? '' }] : [];
 const cover = slides[0]?.src;
 const { Content } = await render(entry);
@@ -41,6 +55,20 @@ const others = (await getCollection('cases', ({ id, data }) => id !== entry.id &
       <div class="prose">
         {summary && <p>{summary[lang]}</p>}
         {hasBody && <Content />}
+        {
+          links.length > 0 && (
+            <ul class="case-links">
+              {links.map((l) => (
+                <li>
+                  <a href={l.url} target="_blank" rel="noopener">
+                    <span class="ico" set:html={symbol(l.icon)} />
+                    <span>{l.label[lang]}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          )
+        }
       </div>
     </div>
   </article>

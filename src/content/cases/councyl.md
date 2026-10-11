@@ -20,6 +20,11 @@ images:
     alt: "Councyl.ai homepage mock-up"
   - src: "https://www.basvanderpaardt.com/wp-content/uploads/2022/03/endslide-blue-1024x1024.png"
     alt: "Councyl.ai slide"
+links:
+  - label:
+      nl: "Councyl website"
+      en: "Councyl website"
+    url: "https://councyl.ai/"
 featured: true
 order: 1
 ---

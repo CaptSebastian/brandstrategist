@@ -18,6 +18,11 @@ images:
       en: "One-pager website, built in about two weeks."
   - src: "https://www.basvanderpaardt.com/wp-content/uploads/2024/03/bas-losse-assets-2-1024x1024.jpg"
     alt: "ViaDjo losse assets"
+links:
+  - label:
+      nl: "ViaDjo website"
+      en: "ViaDjo website"
+    url: "https://www.viadjo.nl/"
 featured: true
 order: 5
 ---

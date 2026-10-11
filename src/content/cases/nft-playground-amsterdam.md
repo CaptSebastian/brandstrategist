@@ -24,5 +24,10 @@ images:
     alt: "NFT Playground Amsterdam"
   - src: "https://www.basvanderpaardt.com/wp-content/uploads/2022/06/Schermafbeelding-2022-06-06-om-13.33.26-1024x526.png"
     alt: "NFT Playground Amsterdam"
+links:
+  - label:
+      nl: "NFT Playground Amsterdam website"
+      en: "NFT Playground Amsterdam website"
+    url: "https://nftplayground.amsterdam/"
 order: 10
 ---

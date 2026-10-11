@@ -181,3 +181,11 @@ address { font-style: normal; color: var(--muted); }
 /* Desktop: klikken op de linker/rechterhelft van het beeld bladert (cursor laat de richting zien) */
 .slides[data-side='left'] { cursor: w-resize; }
 .slides[data-side='right'] { cursor: e-resize; }
+
+/* Links onder de casetekst: icoon (Google Material Symbols) + label */
+.case-links { list-style: none; margin: 2rem 0 0; padding: 0; display: grid; gap: 0.7rem; }
+.case-links a { display: inline-flex; align-items: center; gap: 0.7rem; text-decoration: none; }
+.case-links a:hover { color: var(--accent); }
+.case-links a:hover span:last-child { text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 0.2em; }
+.case-links .ico { display: inline-flex; width: 1.4rem; height: 1.4rem; flex: none; }
+.case-links .ico svg { width: 100%; height: 100%; }

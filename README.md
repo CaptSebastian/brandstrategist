@@ -42,11 +42,17 @@ images:                                     # carousel op de projectpagina, in v
     note: { nl: "Geeltje bij dit beeld", en: "Sticky note for this image" }
   - src: "/images/cases/projectnaam-2.jpg"
     alt: "..."
+links:                                     # links onder de tekst (optioneel)
+  - label: { nl: "Projectwebsite", en: "Project website" }
+    url: "https://voorbeeld.nl/"
+    icon: "bed"                             # naam uit Google Material Symbols; weglaten = pijltje
 order: 7            # volgorde, laag = eerst
 draft: false        # true = verbergen
 ---
 Optionele extra tekst in Markdown.
 ```
+
+**Links en iconen:** kies een icoon op [fonts.google.com/icons](https://fonts.google.com/icons) (klik op het icoon, de naam staat rechts, schrijf hem in kleine letters met underscores, bijv. `local_bar`). Staat `icon` er niet, of bestaat de naam niet, dan komt er een pijltje. De iconen komen uit het pakket `@material-symbols/svg-400` en worden bij de build ingebouwd (geen verzoek naar Google).
 
 **Geeltjes** zijn gewone HTML-tekst (`<figcaption>`) in de pagina, dus Google, Google Translate en schermlezers kunnen ze lezen. Zonder JavaScript blijft de carousel een horizontaal veegbare rij.
 

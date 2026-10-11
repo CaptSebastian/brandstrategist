@@ -39,6 +39,16 @@ images:
     alt: "Noodopvang Utrecht"
   - src: "https://www.basvanderpaardt.com/wp-content/uploads/2024/03/Bas-Opvang3-1024x1024.jpg"
     alt: "Noodopvang Utrecht"
+links:
+  - label:
+      nl: "SNDVU website"
+      en: "SNDVU website"
+    url: "https://www.sndvu.nl/"
+    icon: "bed"
+  - label:
+      nl: "De Nieuwe Gevers website"
+      en: "De Nieuwe Gevers website"
+    url: "https://denieuwegevers.nl/"
 featured: true
 order: 6
 ---

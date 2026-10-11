@@ -16,6 +16,10 @@ const cases = defineCollection({
     images: z
       .array(z.object({ src: z.string(), alt: z.string().default(''), note: bilingual.optional() }))
       .default([]),
+    /** Links onder de tekst. `icon` = naam uit Google Material Symbols (bijv. "bed"); zonder icon komt er een pijltje. */
+    links: z
+      .array(z.object({ label: bilingual, url: z.string().url(), icon: z.string().regex(/^[a-z0-9_]+$/).optional() }))
+      .default([]),
     featured: z.boolean().default(false),
     order: z.number().default(99),
     draft: z.boolean().default(false),

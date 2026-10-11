@@ -43,6 +43,11 @@ images:
     note:
       nl: "Huzzah! (dank je, Daan!)"
       en: "Huzzah! (thanks, Daan!)"
+links:
+  - label:
+      nl: "Copernicus Beer website"
+      en: "Copernicus Beer website"
+    url: "https://www.copernicusbeer.xyz/"
 featured: true
 order: 4
 ---
