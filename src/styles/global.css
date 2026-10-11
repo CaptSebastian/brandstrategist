@@ -176,7 +176,7 @@ address { font-style: normal; color: var(--muted); }
 
 /* Projectpagina: de subkop staat op een vierkant geeltje, tekst in het midden, willekeurig scheef geplakt (--tilt, -10..+10 graden) */
 .case-title { margin-bottom: 0; position: relative; z-index: 0; }
-.case-note { display: grid; place-items: center; width: 15rem; max-width: 100%; aspect-ratio: 1 / 1; position: relative; z-index: 1; margin: -3rem auto clamp(1.75rem, 4vw, 2.75rem); padding: 1.3rem; background: var(--note); color: var(--note-ink); font: 400 1.6rem/1.1 var(--hand); text-align: center; text-wrap: balance; transform: rotate(var(--tilt, -3deg)); box-shadow: 0 6px 14px rgb(0 0 0 / 0.22); }
+.case-note { display: grid; place-items: center; width: 15rem; max-width: 100%; aspect-ratio: 1 / 1; position: relative; z-index: 1; margin: -3rem auto clamp(1.75rem, 4vw, 2.75rem); padding: 1.3rem; background: color-mix(in srgb, var(--note) 95%, transparent); color: var(--note-ink); font: 400 1.6rem/1.1 var(--hand); text-align: center; text-wrap: balance; transform: rotate(var(--tilt, -3deg)); box-shadow: 0 6px 14px rgb(0 0 0 / 0.22); }
 
 /* Desktop: klikken op de linker/rechterhelft van het beeld bladert (cursor laat de richting zien) */
 .slides[data-side='left'] { cursor: w-resize; }
