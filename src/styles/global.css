@@ -178,3 +178,7 @@ address { font-style: normal; color: var(--muted); }
   .slides { scroll-behavior: auto; }
 }
 .carousel-controls[hidden] { display: none; }
+
+/* Projectpagina: subkop even groot als de kop, zelfde interlinie, mager en grijs */
+.case-title { margin-bottom: 0; }
+.case-sub { font: 300 clamp(2.1rem, 5.4vw, 4rem)/1.1 var(--serif); letter-spacing: -0.025em; color: var(--muted); margin: 0 0 clamp(1.5rem, 4vw, 2.5rem); max-width: 24ch; text-wrap: balance; }
