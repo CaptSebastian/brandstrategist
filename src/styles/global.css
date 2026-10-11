@@ -148,11 +148,11 @@ address { font-style: normal; color: var(--muted); }
 .slide-media img { width: 100%; height: 100%; object-fit: cover; }
 .note { position: absolute; left: 1rem; bottom: 1rem; max-width: min(15rem, 70%); background: var(--note); color: var(--note-ink); font: 400 1.5rem/1.1 var(--hand); padding: 0.9rem 1rem 1rem; transform: rotate(-2deg) translateY(0.4rem); box-shadow: 0 6px 14px rgb(0 0 0 / 0.22); opacity: 0; pointer-events: none; transition: opacity 0.2s ease, transform 0.2s ease; }
 /* Geeltje alleen bij mouseover (of toetsenbordfocus); de tekst blijft gewoon in de HTML staan. Op aanraakschermen altijd zichtbaar. */
-.slide figure:hover .note, .carousel:focus-within .note { opacity: 1; transform: rotate(-2deg); }
+.slide figure:hover .note, .carousel:has(:focus-visible) .note { opacity: 1; transform: rotate(-2deg); }
 @media (hover: none) { .note { opacity: 1; transform: rotate(-2deg); } }
 /* Klein geel hoekje als hint dat er een geeltje is */
 .slide figure:has(.note)::after { content: ''; position: absolute; left: 1rem; bottom: 1rem; width: 1.1rem; height: 1.1rem; background: var(--note); box-shadow: 0 2px 6px rgb(0 0 0 / 0.25); transition: opacity 0.2s ease; pointer-events: none; }
-.slide figure:hover::after, .carousel:focus-within .slide figure::after { opacity: 0; }
+.slide figure:hover::after, .carousel:has(:focus-visible) .slide figure::after { opacity: 0; }
 @media (hover: none) { .slide figure:has(.note)::after { display: none; } }
 
 /* Miniaturen onder het grote beeld (Amazon-stijl) */
