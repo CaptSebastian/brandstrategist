@@ -8,8 +8,8 @@
   --on-accent: #ffffff;
   --note: #ffe46e;
   --note-ink: #2a2200;
-  --serif: 'Helvetica Neue', Helvetica, Arial, 'Liberation Sans', sans-serif; /* koppen: Swiss grotesk */
-  --sans: 'Helvetica Neue', Helvetica, Arial, 'Liberation Sans', sans-serif;
+  --serif: 'IBM Plex Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; /* koppen */
+  --sans: 'IBM Plex Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --hand: 'Caveat', 'Bradley Hand', 'Segoe Print', cursive;
   --gutter: clamp(1rem, 4vw, 2.5rem);
   --max: 72rem;
