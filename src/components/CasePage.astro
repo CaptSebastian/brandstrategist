@@ -35,7 +35,7 @@ const others = (await getCollection('cases', ({ id, data }) => id !== entry.id &
   <article class="wrap case-hero">
     <a class="back" href={routes[lang].work}>← {t.work.back}</a>
     <h1 class="case-title">{title}</h1>
-    {tagline && <p class="case-sub">{tagline[lang]}</p>}
+    {tagline && <p class="case-note" data-tilt>{tagline[lang]}</p>}
     <div class="case-layout">
       {slides.length > 0 && <Carousel images={slides} lang={lang} label={title} />}
       <div class="prose">
@@ -60,3 +60,11 @@ const others = (await getCollection('cases', ({ id, data }) => id !== entry.id &
     )
   }
 </Base>
+
+<script>
+  // Elk bezoek plakt het geeltje onder een willekeurige hoek: tussen -10 en +10 graden.
+  document.querySelectorAll<HTMLElement>('[data-tilt]').forEach((el) => {
+    const deg = (Math.random() * 20 - 10).toFixed(1);
+    el.style.setProperty('--tilt', `${deg}deg`);
+  });
+</script>
