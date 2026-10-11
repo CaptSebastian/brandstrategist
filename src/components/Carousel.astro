@@ -11,8 +11,8 @@ interface Props {
 }
 const { images, lang, label } = Astro.props;
 const l = lang === 'nl'
-  ? { prev: 'Vorig beeld', next: 'Volgend beeld', of: 'van', show: 'Toon beeld' }
-  : { prev: 'Previous image', next: 'Next image', of: 'of', show: 'Show image' };
+  ? { of: 'van', show: 'Toon beeld' }
+  : { of: 'of', show: 'Show image' };
 const many = images.length > 1;
 ---
 
@@ -42,30 +42,17 @@ const many = images.length > 1;
       </div>
     )
   }
-  {
-    many && (
-      <div class="carousel-controls" data-controls hidden>
-        <button type="button" class="arrow" data-prev aria-label={l.prev}>←</button>
-        <span class="count" aria-live="polite"><span data-current>1</span> / {images.length}</span>
-        <button type="button" class="arrow" data-next aria-label={l.next}>→</button>
-      </div>
-    )
-  }
 </div>
 
 <script>
   document.querySelectorAll<HTMLElement>('[data-carousel]').forEach((root) => {
     const slides = root.querySelector<HTMLElement>('[data-slides]');
-    const controls = root.querySelector<HTMLElement>('[data-controls]');
     const thumbsBox = root.querySelector<HTMLElement>('[data-thumbs]');
-    if (!slides || !controls) return;
-    controls.hidden = false;
+    if (!slides) return;
     if (thumbsBox) thumbsBox.hidden = false;
-    const current = root.querySelector('[data-current]');
     const thumbs = Array.from(root.querySelectorAll<HTMLElement>('[data-thumb]'));
     const mark = (i: number) => {
       thumbs.forEach((t, k) => t.setAttribute('aria-current', k === i ? 'true' : 'false'));
-      if (current) current.textContent = String(i + 1);
     };
     const items = Array.from(slides.children) as HTMLElement[];
     let index = 0;
@@ -75,8 +62,6 @@ const many = images.length > 1;
       mark(index);
     };
     thumbs.forEach((t, k) => t.addEventListener('click', () => go(k)));
-    root.querySelector('[data-prev]')?.addEventListener('click', () => go(index - 1));
-    root.querySelector('[data-next]')?.addEventListener('click', () => go(index + 1));
     root.addEventListener('keydown', (e) => {
       if (e.key === 'ArrowLeft') go(index - 1);
       if (e.key === 'ArrowRight') go(index + 1);
