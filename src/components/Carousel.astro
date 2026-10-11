@@ -62,6 +62,16 @@ const many = images.length > 1;
       mark(index);
     };
     thumbs.forEach((t, k) => t.addEventListener('click', () => go(k)));
+    // Desktop: klik op de linker- of rechterhelft van het beeld = vorige/volgende
+    if (items.length > 1 && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+      const side = (e: MouseEvent) => {
+        const r = slides.getBoundingClientRect();
+        return e.clientX - r.left < r.width / 2 ? 'left' : 'right';
+      };
+      slides.addEventListener('mousemove', (e) => { slides.dataset.side = side(e); });
+      slides.addEventListener('mouseleave', () => { delete slides.dataset.side; });
+      slides.addEventListener('click', (e) => go(side(e) === 'left' ? index - 1 : index + 1));
+    }
     root.addEventListener('keydown', (e) => {
       if (e.key === 'ArrowLeft') go(index - 1);
       if (e.key === 'ArrowRight') go(index + 1);
