@@ -5,10 +5,11 @@ import { routes, type Lang } from '../i18n/ui';
 interface Props {
   entry: CollectionEntry<'cases'>;
   lang: Lang;
+  showSummary?: boolean;
 }
 
-const { entry, lang } = Astro.props;
-const { title, tagline, image, imageAlt, images } = entry.data;
+const { entry, lang, showSummary = false } = Astro.props;
+const { title, tagline, summary, image, imageAlt, images } = entry.data;
 const src = image ?? images[0]?.src;
 const alt = imageAlt ?? images[0]?.alt ?? '';
 ---
@@ -19,4 +20,5 @@ const alt = imageAlt ?? images[0]?.alt ?? '';
   </div>
   <h3>{title}</h3>
   {tagline && <p>{tagline[lang]}</p>}
+  {showSummary && summary && <p class="card-sum">{summary[lang]}</p>}
 </a>

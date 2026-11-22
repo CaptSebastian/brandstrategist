@@ -20,6 +20,10 @@ const cases = defineCollection({
     links: z
       .array(z.object({ label: bilingual, url: z.union([z.string().url(), z.string().startsWith('/')]), icon: z.string().regex(/^[a-z0-9_]+$/).optional() }))
       .default([]),
+    /** Klantquote die op de projectpagina onder de tekst komt. */
+    quote: z.object({ text: bilingual, name: z.string(), org: z.string() }).optional(),
+    /** Vast bovenaan de homepage uitgelicht (met samenvatting), buiten het willekeurige raster. */
+    pinned: z.boolean().default(false),
     featured: z.boolean().default(false),
     order: z.number().default(99),
     draft: z.boolean().default(false),

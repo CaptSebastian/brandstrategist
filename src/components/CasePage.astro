@@ -28,7 +28,7 @@ interface Props {
 const { lang, entry } = Astro.props;
 const t = ui[lang];
 const other: Lang = lang === 'nl' ? 'en' : 'nl';
-const { title, tagline, summary, image, imageAlt, images, links } = entry.data;
+const { title, tagline, summary, image, imageAlt, images, links, quote } = entry.data;
 const slides = images.length ? images : image ? [{ src: image, alt: imageAlt ?? '' }] : [];
 const cover = slides[0]?.src;
 const { Content } = await render(entry);
@@ -55,6 +55,16 @@ const others = (await getCollection('cases', ({ id, data }) => id !== entry.id &
       <div class="prose">
         {summary && <p>{summary[lang]}</p>}
         {hasBody && <Content />}
+        {
+          quote && (
+            <blockquote class="case-quote">
+              <p>{quote.text[lang]}</p>
+              <footer>
+                {quote.name}, {quote.org}
+              </footer>
+            </blockquote>
+          )
+        }
         {
           links.length > 0 && (
             <ul class="case-links">

@@ -26,9 +26,9 @@ export const ui = {
     siteName: 'Bas van der Paardt',
     nav: { work: 'Werk', about: 'Over', contact: 'Contact', cta: 'Neem contact op', switchTo: 'English' },
     meta: {
-      homeTitle: 'Bas van der Paardt — merkstrateeg en ontwerper',
+      homeTitle: 'Bas van der Paardt — zelfstandig merk- en marketingadviseur',
       homeDesc:
-        'Onafhankelijk ontwerper en merkstrateeg in Amsterdam. Ik help ondernemers met een missie hun verhaal helder te krijgen én bijzonder te vertellen.',
+        'Zelfstandig merk- en marketingadviseur in Amsterdam. Ik help ondernemers en organisaties scherp te krijgen waar ze voor staan en dat zichtbaar te maken.',
       workTitle: 'Werk',
       workDesc: 'Een selectie van projecten op het gebied van merkstrategie, branding en design.',
       aboutTitle: 'Over Bas',
@@ -36,27 +36,74 @@ export const ui = {
       thanksTitle: 'Bedankt',
     },
     hero: {
-      eyebrow: 'Onafhankelijk ontwerper en merkstrateeg',
-      title: 'Ik help ondernemers met een missie hun verhaal helder te krijgen én bijzonder te vertellen.',
-      lead: '25+ jaar ervaring in marketing, branding en digitale innovatie, voor merken als Orange, Jumbo, Nike, Rabobank en Schiphol Group.',
-      primary: 'Neem contact op',
-      secondary: 'Bekijk werk',
+      eyebrow: 'Zelfstandig merk- en marketingadviseur',
+      title: 'Een helder verhaal. Een merk dat klopt.',
+      lead: 'Je bedrijf groeit of verandert. Er komen mensen, producten en ideeën bij. Maar vertellen je website, je presentatie en je team nog hetzelfde verhaal?',
+      lead2:
+        'Ik help ondernemers en organisaties scherp te krijgen waar ze voor staan en wat hen onderscheidt. En ik help om die keuzes zichtbaar te maken: van de eerste ideeën tot de uitvoering en de samenhang daarna.',
+      primary: 'Bespreek jouw vraag',
+      secondary: 'Bekijk mijn werk',
     },
-    work: { title: 'Geselecteerd werk', all: 'Alle projecten', back: 'Terug naar alle werk', more: 'Meer projecten', shuffle: 'Toon andere selectie' },
-    values: {
-      title: 'Waarde',
-      body: 'De kern van mijn werk is het ontdekken, vormgeven en communiceren van waarde. Een opdrachtgever noemde mij een schatgraver. Ik verzin niet zomaar iets ‘creatiefs’: de waarde zit in jou en je organisatie. Vaak verborgen, maar nooit onvindbaar. De creativiteit zit hem vervolgens in het vormgeven ervan voor je klant of gebruiker.',
-    },
-    method: {
-      title: 'De 4XB-werkwijze',
-      intro: 'Door vier vragen telkens opnieuw te beantwoorden, leggen we een solide basis voor je marketing.',
-      steps: [
-        { word: 'Behoefte', q: 'Waar is behoefte aan, bij wie?' },
-        { word: 'Belofte', q: 'Wat is jouw belofte aan hen?' },
-        { word: 'Beleving', q: 'Welke beleving bieden we hen?' },
-        { word: 'Bewijs', q: 'Hoe bewijzen we dat jouw belofte de moeite waard is?' },
+
+    change: {
+      title: 'Als je bedrijf verandert, moet je verhaal soms mee',
+      paragraphs: [
+        'Misschien herken je het: je website past niet meer bij wat je bedrijf vandaag doet. Je aanbod is gegroeid, maar het is lastig uit te leggen hoe alles samenhangt. Of er wordt volop gewerkt aan marketing, terwijl niemand zeker weet of alle keuzes dezelfde kant op wijzen.',
+        'Dan is een nieuw logo of een campagne niet altijd het eerste antwoord. Soms helpt het om eerst een stap terug te doen: wat willen we bereiken, voor wie zijn we relevant en wat maakt ons anders?',
+        'Van daaruit kun je gerichter kiezen wat je vertelt, wat je maakt en hoe je klanten je bedrijf ervaren.',
       ],
     },
+    practice: {
+      title: 'Van richting naar praktijk',
+      intro:
+        'Ik verbind strategisch denken met creatieve uitwerking. Niet door een rapport op te leveren en te vertrekken, maar door samen te onderzoeken wat nodig is en te helpen die keuzes in praktijk te brengen.',
+      steps: [
+        {
+          word: 'De koers bepalen',
+          q: 'We brengen in kaart waar je bedrijf staat, waar je naartoe wilt en wat voor je klanten van waarde is. Dat kan uitmonden in een aangescherpte positionering, een merkverhaal en duidelijke keuzes voor je communicatie.',
+        },
+        {
+          word: 'De koers zichtbaar maken',
+          q: 'Een goed idee wordt sterker als je kunt zien hoe het werkt. Daarom vertaal ik de richting naar concrete voorstellen: bijvoorbeeld voor je verhaal, identiteit, website, presentatie, campagne of dienstverlening.',
+        },
+        {
+          word: 'De rode draad bewaken',
+          q: 'Ook tijdens en na de uitvoering denk ik mee en bewaak ik de samenhang. Ik help bij keuzes, briefings en de beoordeling van werk, zodat verschillende uitingen en initiatieven elkaar versterken.',
+        },
+      ],
+      outro:
+        'Je kunt me inschakelen voor één vraag of voor een langer traject. Soms maak ik zelf dingen; soms werk ik samen met andere specialisten. Wat nodig is, hangt af van de opdracht.',
+    },
+    aboutHome: {
+      title: 'Over Bas',
+      paragraphs: [
+        'Ik ben Bas van der Paardt, zelfstandig adviseur in merk en marketing. Ik heb ruim 25 jaar ervaring in marketing, branding en digitale innovatie, voor merken als Orange, Jumbo, Nike, Rabobank en Schiphol Group.',
+        'De kern van mijn werk is het ontdekken, vormgeven en communiceren van waarde. Een opdrachtgever noemde mij ooit een schatgraver: ik geloof dat de waarde vaak al in een organisatie aanwezig is. De uitdaging is om die te vinden, scherp te maken en betekenis te geven voor klanten en gebruikers.',
+        'Ik werk graag met ondernemers en organisaties die iets van betekenis willen maken. Van bedrijven die nieuwe materialen ontwikkelen tot initiatieven rond ethische AI of het helpen van ondernemers met schulden.',
+      ],
+    },
+    work: {
+      title: 'Werk dat laat zien hoe dat eruitziet',
+      selected: 'Meer geselecteerd werk',
+      all: 'Bekijk alle projecten',
+      back: 'Terug naar alle werk',
+      more: 'Meer projecten',
+      shuffle: 'Toon andere selectie',
+    },
+
+    method: {
+      title: 'Mijn werkwijze: vier vragen die richting geven',
+      intro: 'Mijn 4XB-werkwijze helpt om steeds vanuit de klant naar je merk te kijken:',
+      steps: [
+        { word: 'Behoefte', q: 'Waar is behoefte aan, en bij wie?' },
+        { word: 'Belofte', q: 'Wat beloof je die mensen?' },
+        { word: 'Beleving', q: 'Hoe ervaren zij die belofte?' },
+        { word: 'Bewijs', q: 'Hoe laat je zien dat je die belofte waarmaakt?' },
+      ],
+      outro:
+        'De antwoorden zijn geen eindpunt. Ze vormen een basis om keuzes te maken en ideeën te ontwikkelen die je in de praktijk kunt brengen.',
+    },
+
     quotes: {
       title: 'Wat opdrachtgevers zeggen',
       items: [
@@ -66,31 +113,25 @@ export const ui = {
           org: 'NPO Public Broadcasting',
         },
         {
-          text: 'Bas van der Paardt heeft ons als business consultant geadviseerd en begeleid met het vaststellen van onze missie en visie naar aanloop van een investeringsplan en toekomststrategieën. Het resultaat was een uniek plan waarmee wij een investering hebben binnengehaald.',
-          name: 'Wouter Suren',
-          org: 'L1NDA',
-        },
-        {
           text: 'ID+AD heeft ons geholpen bij het bepalen en kiezen van onze positionering. Bas is een professional die ons team uitdaagde en continu terugbracht naar de essentie. […] Op het resultaat hebben we sterk verder kunnen bouwen.',
           name: 'Pieter Meijer',
           org: 'Pervorm',
         },
       ],
     },
-    meaning: {
-      title: 'Betekenis',
-      body: 'Ik haal veel voldoening uit het helpen starten, of uit de prut trekken, van ondernemers die van betekenis willen zijn voor ‘de wereld’. Bijvoorbeeld voor een bedrijf dat bioplastics maakt van PHA, een TU Delft-spinoff die ethische AI ontwikkelt, een blockchain-biermerk dat strijdt voor een decentrale samenleving of een social company die ondernemers uit de schulden helpt.',
-    },
+
     contact: {
-      title: 'Klaar voor de volgende stap?',
-      lead: 'Ben jij een ondernemer met een missie en op zoek naar een ervaren partner die je helpt je verhaal helder te krijgen én bijzonder te vertellen? Neem contact op. Ik denk graag met je mee over hoe we jouw impact kunnen vergroten.',
+      title: 'Waar loopt jouw merk tegenaan?',
+      lead: 'Heb je een concrete vraag, of merk je dat je verhaal niet meer helemaal past bij waar je bedrijf naartoe wil? Vertel me waar je mee bezig bent. Dan kijken we samen wat een goede eerste stap is.',
+      role: 'Zelfstandig merk- en marketingadviseur',
       name: 'Naam',
       email: 'E-mailadres',
-      message: 'Waar kan ik je mee helpen?',
-      send: 'Verstuur',
+      message: 'Waar loop je tegenaan?',
+      send: 'Neem contact op',
       orMail: 'Of mail direct naar',
       visit: 'Bezoekadres',
     },
+
     about: {
       title: 'Over Bas',
       intro: 'Ik ben een onafhankelijk ontwerper en merkstrateeg met meer dan 25 jaar ervaring in branding en digitale innovatie.',
@@ -113,9 +154,9 @@ export const ui = {
     siteName: 'Bas van der Paardt',
     nav: { work: 'Work', about: 'About', contact: 'Contact', cta: 'Get in touch', switchTo: 'Nederlands' },
     meta: {
-      homeTitle: 'Bas van der Paardt — brand strategist and designer',
+      homeTitle: 'Bas van der Paardt — independent brand and marketing adviser',
       homeDesc:
-        'Independent designer and brand strategist in Amsterdam. I help mission-driven entrepreneurs get their story clear and tell it in a remarkable way.',
+        'Independent brand and marketing adviser in Amsterdam. I help entrepreneurs and organisations get clear on what they stand for and make it visible.',
       workTitle: 'Work',
       workDesc: 'A selection of projects in brand strategy, branding and design.',
       aboutTitle: 'About Bas',
@@ -123,27 +164,74 @@ export const ui = {
       thanksTitle: 'Thank you',
     },
     hero: {
-      eyebrow: 'Independent designer and brand strategist',
-      title: 'I help mission-driven entrepreneurs get their story clear and tell it in a remarkable way.',
-      lead: '25+ years of experience in marketing, branding and digital innovation, for brands such as Orange, Jumbo, Nike, Rabobank and Schiphol Group.',
-      primary: 'Get in touch',
-      secondary: 'See work',
+      eyebrow: 'Independent brand and marketing adviser',
+      title: 'A clear story. A brand that adds up.',
+      lead: 'Your business is growing or changing. People, products and ideas are being added. But do your website, your presentation and your team still tell the same story?',
+      lead2:
+        'I help entrepreneurs and organisations get clear on what they stand for and what sets them apart. And I help make those choices visible: from the first ideas to the execution and the coherence afterwards.',
+      primary: 'Discuss your question',
+      secondary: 'See my work',
     },
-    work: { title: 'Selected work', all: 'All projects', back: 'Back to all work', more: 'More projects', shuffle: 'Show another selection' },
-    values: {
-      title: 'Value',
-      body: 'The core of my work is discovering, shaping and communicating value. A client once called me a treasure hunter. I don’t just make up something ‘creative’: the value is in you and your organisation. Often hidden, but never impossible to find. The creativity then lies in shaping it for your customer or user.',
-    },
-    method: {
-      title: 'The 4XB method',
-      intro: 'In Dutch, all four steps start with a B. By answering four questions again and again, we build a solid foundation for your marketing.',
-      steps: [
-        { word: 'Need', q: 'What is needed, and by whom?' },
-        { word: 'Promise', q: 'What is your promise to them?' },
-        { word: 'Experience', q: 'What experience do we offer them?' },
-        { word: 'Proof', q: 'How do we prove your promise is worth it?' },
+
+    change: {
+      title: 'When your business changes, your story sometimes has to change with it',
+      paragraphs: [
+        'You may recognise it: your website no longer fits what your business does today. Your offering has grown, but it’s hard to explain how everything fits together. Or a lot of marketing is going on, while nobody is sure all the choices point the same way.',
+        'A new logo or a campaign isn’t always the first answer. Sometimes it helps to take a step back first: what do we want to achieve, who are we relevant to and what makes us different?',
+        'From there you can choose more deliberately what you tell, what you make and how customers experience your business.',
       ],
     },
+    practice: {
+      title: 'From direction to practice',
+      intro:
+        'I connect strategic thinking with creative execution. Not by delivering a report and leaving, but by exploring together what is needed and helping put those choices into practice.',
+      steps: [
+        {
+          word: 'Setting the course',
+          q: 'We map out where your business stands, where you want to go and what your customers value. This can lead to sharper positioning, a brand story and clear choices for your communication.',
+        },
+        {
+          word: 'Making the course visible',
+          q: 'A good idea gets stronger when you can see how it works. That’s why I translate the direction into concrete proposals: for your story, identity, website, presentation, campaign or services.',
+        },
+        {
+          word: 'Keeping the thread',
+          q: 'During and after execution I keep thinking along and safeguard coherence. I help with choices, briefs and the review of work, so different expressions and initiatives reinforce each other.',
+        },
+      ],
+      outro:
+        'You can bring me in for a single question or a longer engagement. Sometimes I make things myself; sometimes I work with other specialists. What is needed depends on the assignment.',
+    },
+    aboutHome: {
+      title: 'About Bas',
+      paragraphs: [
+        'I’m Bas van der Paardt, an independent brand and marketing adviser. I have more than 25 years of experience in marketing, branding and digital innovation, for brands such as Orange, Jumbo, Nike, Rabobank and Schiphol Group.',
+        'The core of my work is discovering, shaping and communicating value. A client once called me a treasure hunter: I believe the value is often already present in an organisation. The challenge is to find it, sharpen it and give it meaning for customers and users.',
+        'I enjoy working with entrepreneurs and organisations that want to make something of meaning. From companies developing new materials to initiatives around ethical AI or helping entrepreneurs in debt.',
+      ],
+    },
+    work: {
+      title: 'Work that shows what this looks like',
+      selected: 'More selected work',
+      all: 'View all projects',
+      back: 'Back to all work',
+      more: 'More projects',
+      shuffle: 'Show another selection',
+    },
+
+    method: {
+      title: 'My method: four questions that give direction',
+      intro: 'My 4XB method helps to look at your brand from the customer’s point of view, again and again. In Dutch, all four steps start with a B:',
+      steps: [
+        { word: 'Need', q: 'What is needed, and by whom?' },
+        { word: 'Promise', q: 'What do you promise those people?' },
+        { word: 'Experience', q: 'How do they experience that promise?' },
+        { word: 'Proof', q: 'How do you show you deliver on that promise?' },
+      ],
+      outro:
+        'The answers are not an endpoint. They form a basis for making choices and developing ideas you can put into practice.',
+    },
+
     quotes: {
       title: 'What clients say',
       items: [
@@ -153,31 +241,25 @@ export const ui = {
           org: 'NPO Public Broadcasting',
         },
         {
-          text: 'Bas van der Paardt advised and guided us as a business consultant in defining our mission and vision ahead of an investment plan and future strategies. The result was a unique plan with which we secured an investment.',
-          name: 'Wouter Suren',
-          org: 'L1NDA',
-        },
-        {
           text: 'ID+AD helped us determine and choose our positioning. Bas is a professional who challenged our team and kept bringing us back to the essence. […] We were able to build strongly on the result.',
           name: 'Pieter Meijer',
           org: 'Pervorm',
         },
       ],
     },
-    meaning: {
-      title: 'Meaning',
-      body: 'I find great satisfaction in helping entrepreneurs start, or get out of a rut, who want to be meaningful to ‘the world’. For example a company making bioplastics from PHA, a TU Delft spin-off developing ethical AI, a blockchain beer brand fighting for a decentralised society, or a social company helping entrepreneurs out of debt.',
-    },
+
     contact: {
-      title: 'Ready for the next step?',
-      lead: 'Are you an entrepreneur with a mission, looking for an experienced partner to help you get your story clear and tell it in a remarkable way? Get in touch. I’d be glad to think along about how we can increase your impact.',
+      title: 'What is your brand running into?',
+      lead: 'Do you have a specific question, or do you notice your story no longer quite fits where your business is heading? Tell me what you’re working on. Then we’ll look together at a good first step.',
+      role: 'Independent brand and marketing adviser',
       name: 'Name',
       email: 'Email address',
-      message: 'How can I help you?',
-      send: 'Send',
+      message: 'What are you running into?',
+      send: 'Get in touch',
       orMail: 'Or email directly',
       visit: 'Address',
     },
+
     about: {
       title: 'About Bas',
       intro: 'I’m an independent designer and brand strategist with more than 25 years of experience in branding and digital innovation.',
