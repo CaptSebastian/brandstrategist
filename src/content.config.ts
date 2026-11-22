@@ -18,7 +18,7 @@ const cases = defineCollection({
       .default([]),
     /** Links onder de tekst. `icon` = naam uit Google Material Symbols (bijv. "bed"); zonder icon komt er een pijltje. */
     links: z
-      .array(z.object({ label: bilingual, url: z.string().url(), icon: z.string().regex(/^[a-z0-9_]+$/).optional() }))
+      .array(z.object({ label: bilingual, url: z.union([z.string().url(), z.string().startsWith('/')]), icon: z.string().regex(/^[a-z0-9_]+$/).optional() }))
       .default([]),
     featured: z.boolean().default(false),
     order: z.number().default(99),
