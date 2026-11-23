@@ -99,10 +99,11 @@ const featured = visible.filter((e) => !e.data.pinned);
       {
         featured.length > 0 && (
           <>
-            <h3 class="work-sub">{t.work.selected}</h3>
-            <ShuffleGrid count={6}>
-              {featured.map((entry) => <CaseCard entry={entry} lang={lang} />)}
-            </ShuffleGrid>
+            <div class="work-grid">
+              <ShuffleGrid count={6}>
+                {featured.map((entry) => <CaseCard entry={entry} lang={lang} />)}
+              </ShuffleGrid>
+            </div>
           </>
         )
       }

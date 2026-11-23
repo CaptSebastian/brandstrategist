@@ -195,7 +195,7 @@ address { font-style: normal; color: var(--muted); }
 .method-3 { grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); }
 .method-3 .word { font-size: 1.35rem; }
 .outro { margin-top: 2rem; max-width: 42rem; color: var(--muted); }
-.work-sub { margin: 3rem 0 1.2rem; }
+.work-grid { margin-top: 3rem; }
 .pinned { display: grid; gap: clamp(1.5rem, 2.5vw, 1.75rem); grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); }
 .card .card-sum { margin-top: 0.6rem; color: var(--ink); font-size: 1rem; }
 .contact-who { margin-top: 1.5rem; }

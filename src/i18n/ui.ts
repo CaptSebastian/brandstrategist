@@ -84,7 +84,6 @@ export const ui = {
     },
     work: {
       title: 'Geselecteerd werk',
-      selected: 'Meer geselecteerd werk',
       all: 'Meer werk',
       back: 'Terug naar alle werk',
       more: 'Meer projecten',
@@ -212,7 +211,6 @@ export const ui = {
     },
     work: {
       title: 'Selected work',
-      selected: 'More selected work',
       all: 'More work',
       back: 'Back to all work',
       more: 'More projects',
