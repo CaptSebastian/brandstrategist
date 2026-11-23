@@ -1,0 +1,87 @@
+---
+// Langzame tickertape met klantnamen, direct onder de hero (voor de fold).
+// Pas de lijst hieronder aan om namen toe te voegen of te verwijderen.
+import type { Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+
+const klanten = [
+  'L1NDA',
+  'Helian Polymers',
+  'Councyl.ai',
+  'Go!PHA',
+  'BeOne',
+  'Copernicus bier',
+  'ViaDjo',
+  'Noodopvang Utrecht',
+  'NFT Playground Amsterdam',
+  'Promiss',
+  'BLAD',
+  'European Shiatsu Congress',
+];
+const label = lang === 'nl' ? 'Klanten waarvoor ik werkte' : 'Clients I have worked for';
+const seconden = 70; // duur van één ronde; hoger = langzamer
+---
+
+<section class="ticker" aria-label={label} style={`--duur:${seconden}s`}>
+  <div class="ticker-track">
+    {
+      [0, 1].map((i) => (
+        <ul class="ticker-rij" aria-hidden={i === 1 ? 'true' : undefined}>
+          {klanten.map((naam) => <li>{naam}</li>)}
+        </ul>
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  .ticker {
+    overflow: hidden;
+    border-block: 1px solid var(--line);
+    padding-block: 1.1rem;
+    mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  }
+  .ticker-track {
+    display: flex;
+    width: max-content;
+    animation: ticker-scroll var(--duur) linear infinite;
+  }
+  .ticker:hover .ticker-track { animation-play-state: paused; }
+  .ticker-rij {
+    display: flex;
+    flex-shrink: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .ticker-rij li {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    padding-inline: 1.75rem;
+    font: 600 clamp(0.85rem, 1.6vw, 1.05rem) / 1 var(--sans);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .ticker-rij li::after {
+    content: '';
+    width: 5px;
+    height: 5px;
+    margin-left: 3.5rem;
+    background: var(--accent);
+  }
+  @keyframes ticker-scroll { to { transform: translateX(-50%); } }
+
+  /* Wie beweging uit heeft staan, ziet een rustige, statische lijst */
+  @media (prefers-reduced-motion: reduce) {
+    .ticker-track { animation: none; width: auto; flex-wrap: wrap; justify-content: center; }
+    .ticker-rij[aria-hidden='true'] { display: none; }
+    .ticker-rij { flex-wrap: wrap; justify-content: center; row-gap: 0.6rem; }
+    .ticker-rij li::after { display: none; }
+  }
+</style>

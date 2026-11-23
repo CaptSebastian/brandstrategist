@@ -4,6 +4,7 @@ import Base from '../layouts/Base.astro';
 import CaseCard from './CaseCard.astro';
 import ShuffleGrid from './ShuffleGrid.astro';
 import Contact from './Contact.astro';
+import ClientTicker from './ClientTicker.astro';
 import { ui, routes, type Lang } from '../i18n/ui';
 
 interface Props {
@@ -35,6 +36,8 @@ const featured = visible.filter((e) => !e.data.pinned);
       </div>
     </div>
   </section>
+
+  <ClientTicker lang={lang} />
 
   <section class="section" id="change">
     <div class="wrap two-col">
