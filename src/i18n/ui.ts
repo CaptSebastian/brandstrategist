@@ -19,7 +19,7 @@ export const routes = {
   },
 } as const;
 
-export const email = 'bas@vanderpaardt.com';
+export const email = 'hellobas@vanderpaardt.com';
 
 export const ui = {
   nl: {

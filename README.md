@@ -80,7 +80,7 @@ Het formulier gebruikt Netlify Forms (`data-netlify="true"`, met honeypot). Na d
 2. In Netlify: *Add new site → Import from Git*. Build command `npm run build`, publish directory `dist` (staat al in `netlify.toml`).
 3. Test op de Netlify-preview-URL.
 4. Domein: stel `www.basvanderpaardt.com` in als primair domein en voeg `basvanderpaardt.com` en `vanderpaardt.com` toe als aliassen; Netlify stuurt aliassen door naar het primaire domein.
-5. **E-mail:** het adres bas@vanderpaardt.com staat op het domein vanderpaardt.com. Als je de DNS naar Netlify verplaatst, neem dan alle bestaande MX-, SPF-, DKIM- en andere mailrecords over, anders valt je mail uit.
+5. **E-mail:** het adres hellobas@vanderpaardt.com staat op het domein vanderpaardt.com. Als je de DNS naar Netlify verplaatst, neem dan alle bestaande MX-, SPF-, DKIM- en andere mailrecords over, anders valt je mail uit.
 6. Controleer de redirects in `public/_redirects` tegen de oude URL's en zet pas daarna het oude WordPress-hosting uit. Bewaar eerst een backup.
 
 ## Nog te doen (inhoud)
