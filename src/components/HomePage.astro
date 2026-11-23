@@ -52,6 +52,7 @@ const featured = visible.filter((e) => !e.data.pinned);
     <div class="wrap">
       <h2>{t.practice.title}</h2>
       <p class="lead">{t.practice.intro}</p>
+      <p class="lead">{t.practice.outro}</p>
       <ol class="method-list method method-3">
         {
           t.practice.steps.map((step, i) => (
@@ -63,7 +64,6 @@ const featured = visible.filter((e) => !e.data.pinned);
           ))
         }
       </ol>
-      <p class="outro">{t.practice.outro}</p>
     </div>
   </section>
 
