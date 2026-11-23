@@ -6,7 +6,7 @@ tagline:
   en: "From vision to a story for growth"
 summary:
   nl: "L1NDA ontwikkelt software voor personeelsplanning in de horeca. Ik hielp de oprichters met hun missie, visie en positionering en werkte mee aan onder meer de klantreis, de app en presentaties voor investeerders. Na een investeerderspresentatie vonden de oprichters een investeerder."
-  en: "L1NDA developed staff-planning software for the hospitality industry. I helped the founders with their mission, vision and positioning and worked on, among other things, the customer journey, the app and investor presentations. After an investor presentation, the founders found an investor."
+  en: "L1NDA develops staff-planning software for the hospitality industry. I helped the founders with their mission, vision and positioning and worked on, among other things, the customer journey, the app and investor presentations. After an investor presentation, the founders found an investor."
 images: []
 quote:
   text:

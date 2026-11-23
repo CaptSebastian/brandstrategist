@@ -165,7 +165,7 @@ export const ui = {
     },
     hero: {
       eyebrow: 'Independent brand and marketing adviser',
-      title: 'A clear story. A brand that adds up.',
+      title: 'A clear story. A brand that works for you.',
       lead: 'Your business is growing or changing. People, products and ideas are being added. But do your website, your presentation and your team still tell the same story?',
       lead2:
         'I help entrepreneurs and organisations get clear on what they stand for and what sets them apart. And I help make those choices visible: from the first ideas to the execution and the coherence afterwards.',
@@ -174,17 +174,17 @@ export const ui = {
     },
 
     change: {
-      title: 'When your business changes, your story sometimes has to change with it',
+      title: 'When your business changes, your brand sometimes has to change with it',
       paragraphs: [
         'You may recognise it: your website no longer fits what your business does today. Your offering has grown, but it’s hard to explain how everything fits together. Or a lot of marketing is going on, while nobody is sure all the choices point the same way.',
-        'A new logo or a campaign isn’t always the first answer. Sometimes it helps to take a step back first: what do we want to achieve, who are we relevant to and what makes us different?',
+        'A new logo or a campaign isn’t always the first answer. Sometimes it helps to take a little distance: what do we want to achieve, who are we relevant to and what makes us different?',
         'From there you can choose more deliberately what you tell, what you make and how customers experience your business.',
       ],
     },
     practice: {
-      title: 'From direction to practice',
+      title: 'From reflection to practice',
       intro:
-        'I connect strategic thinking with creative execution. Not by delivering a report and leaving, but by exploring together what is needed and helping put those choices into practice.',
+        'I connect strategic thinking with creative execution. Not by just delivering a report, but by exploring together what is needed and helping put those choices into practice.',
       steps: [
         {
           word: 'Setting the course',
@@ -211,9 +211,9 @@ export const ui = {
       ],
     },
     work: {
-      title: 'Work that shows what this looks like',
+      title: 'Selected work',
       selected: 'More selected work',
-      all: 'View all projects',
+      all: 'More work',
       back: 'Back to all work',
       more: 'More projects',
       shuffle: 'Show another selection',
