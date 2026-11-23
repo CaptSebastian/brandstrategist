@@ -37,7 +37,7 @@ export const ui = {
     },
     hero: {
       eyebrow: 'Zelfstandig merk- en marketingadviseur',
-      title: 'Een helder verhaal. Een merk dat klopt.',
+      title: 'Een helder verhaal. Een merk dat voor je werkt.',
       lead: 'Je bedrijf groeit of verandert. Er komen mensen, producten en ideeën bij. Maar vertellen je website, je presentatie en je team nog hetzelfde verhaal?',
       lead2:
         'Ik help ondernemers en organisaties scherp te krijgen waar ze voor staan en wat hen onderscheidt. En ik help om die keuzes zichtbaar te maken: van de eerste ideeën tot de uitvoering en de samenhang daarna.',
@@ -46,17 +46,17 @@ export const ui = {
     },
 
     change: {
-      title: 'Als je bedrijf verandert, moet je verhaal soms mee',
+      title: 'Als je bedrijf verandert, moet je brand soms mee',
       paragraphs: [
         'Misschien herken je het: je website past niet meer bij wat je bedrijf vandaag doet. Je aanbod is gegroeid, maar het is lastig uit te leggen hoe alles samenhangt. Of er wordt volop gewerkt aan marketing, terwijl niemand zeker weet of alle keuzes dezelfde kant op wijzen.',
-        'Dan is een nieuw logo of een campagne niet altijd het eerste antwoord. Soms helpt het om eerst een stap terug te doen: wat willen we bereiken, voor wie zijn we relevant en wat maakt ons anders?',
+        'Dan is een nieuw logo of een campagne niet altijd het eerste antwoord. Soms helpt het om even afstand te nemen: wat willen we bereiken, voor wie zijn we relevant en wat maakt ons anders?',
         'Van daaruit kun je gerichter kiezen wat je vertelt, wat je maakt en hoe je klanten je bedrijf ervaren.',
       ],
     },
     practice: {
-      title: 'Van richting naar praktijk',
+      title: 'Van reflectie naar praktijk',
       intro:
-        'Ik verbind strategisch denken met creatieve uitwerking. Niet door een rapport op te leveren en te vertrekken, maar door samen te onderzoeken wat nodig is en te helpen die keuzes in praktijk te brengen.',
+        'Ik verbind strategisch denken met creatieve uitwerking. Niet door alleen een rapport op te leveren, maar door samen te onderzoeken wat nodig is en te helpen die keuzes in praktijk te brengen.',
       steps: [
         {
           word: 'De koers bepalen',
@@ -83,9 +83,9 @@ export const ui = {
       ],
     },
     work: {
-      title: 'Werk dat laat zien hoe dat eruitziet',
+      title: 'Geselecteerd werk',
       selected: 'Meer geselecteerd werk',
-      all: 'Bekijk alle projecten',
+      all: 'Meer werk',
       back: 'Terug naar alle werk',
       more: 'Meer projecten',
       shuffle: 'Toon andere selectie',
