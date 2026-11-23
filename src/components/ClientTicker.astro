@@ -31,7 +31,7 @@ const klanten = [
   'Center Parcs',
 ];
 const label = lang === 'nl' ? 'Klanten waarvoor ik werkte' : 'Clients I have worked for';
-const seconden = 70; // duur van één ronde; hoger = langzamer
+const seconden = 110; // duur van één ronde; hoger = langzamer
 ---
 
 <section class="ticker" aria-label={label} style={`--duur:${seconden}s`}>
@@ -71,7 +71,7 @@ const seconden = 70; // duur van één ronde; hoger = langzamer
     align-items: center;
     white-space: nowrap;
     padding-inline: 1.75rem;
-    font: 600 clamp(0.85rem, 1.6vw, 1.05rem) / 1 var(--sans);
+    font: 600 clamp(0.75rem, 1.4vw, 0.9rem) / 1 var(--sans);
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--muted);
